@@ -33,7 +33,6 @@ public class RandomSentenceSpout extends BaseRichSpout {
 		
 		String sentence = sentences[random.nextInt(sentences.length)];
 		collector.emit(new Values(sentence));
-		
 	}
 
 	public void declareOutputFields(OutputFieldsDeclarer declarer) {
