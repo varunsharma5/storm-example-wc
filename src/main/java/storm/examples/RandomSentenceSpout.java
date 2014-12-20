@@ -10,6 +10,7 @@ import backtype.storm.topology.base.BaseRichSpout;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Values;
 
+
 public class RandomSentenceSpout extends BaseRichSpout {
 
 	SpoutOutputCollector collector;
