@@ -21,6 +21,8 @@ import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 
 /**
+ * A simple word-count topology class.
+ * 
  * @author varun
  */
 
