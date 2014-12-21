@@ -3,8 +3,7 @@ package storm.examples;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
@@ -27,7 +26,7 @@ import backtype.storm.tuple.Values;
  */
 
 public class WordCountTopology {
-	private static Logger logger = LoggerFactory.getLogger(WordCountTopology.class);
+	private static Logger logger = Logger.getLogger(WordCountTopology.class);
 
 	public static class SplitSentence extends BaseRichBolt {
 		OutputCollector collector;
@@ -65,8 +64,8 @@ public class WordCountTopology {
 		public void execute(Tuple input) {
 
 			String word = input.getString(0);
-			System.out.println("WordCountTopology.WordCountBolt.execute(): Looking for word:" + word);
-			System.out.println("WordCountTopology.WordCountBolt.execute(): counts:" + counts);
+//			System.out.println("WordCountTopology.WordCountBolt.execute(): Looking for word:" + word);
+//			System.out.println("WordCountTopology.WordCountBolt.execute(): counts:" + counts);
 			Integer count = counts.get(word);
 			
 			if(count == null) {
@@ -74,7 +73,7 @@ public class WordCountTopology {
 			}
 			count++;
 			counts.put(word, count);
-			WordCountTopology.logger.info(word + "," + count);
+			WordCountTopology.logger.info("Varun:" + word + "," + count);
 			collector.emit(new Values(word,count));
 		}
 	}
