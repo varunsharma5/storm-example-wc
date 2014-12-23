@@ -7,7 +7,7 @@ import java.io.IOException;
 public class LogWriter {
 	// private static final String LOG_FILE = System.getProperty("user.dir")+
 	// "/log.txt";
-	private static final String LOG_FILE = "/home/notroot/lab/lognew.txt";
+	private static final String LOG_FILE = "/home/hduser/storm-wc.log";
 
 	private static LogWriter writer = new LogWriter();
 

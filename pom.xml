@@ -49,7 +49,7 @@
     </dependencies>
     
     <build>
-        <plugins>
+       <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
              	<artifactId>maven-compiler-plugin</artifactId>
@@ -58,6 +58,15 @@
                     <target>1.6</target>
                 </configuration>
              </plugin>
-        </plugins>
+       </plugins>
+       <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <targetPath>${project.build.directory}</targetPath>
+            <includes>
+                <include>log4j.properties</include>
+            </includes>
+        </resource>
+    </resources>
     </build>
 </project>
